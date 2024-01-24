@@ -7,6 +7,10 @@
     <title>Calculator</title>
 </head>
 <body>
+    <p class="calculationDisplay">
+
+    </p>
+
     <p>
         <button onclick="updateCalculation('1')">1</button> 
         <button onclick="updateCalculation('2')">2</button> 
@@ -29,7 +33,7 @@
     </p>
     
     <p>
-        <button onclick="updateCalculation(' 0 ')">0</button> 
+        <button onclick="updateCalculation('0')">0</button> 
         <button onclick="updateCalculation('.')">.</button> 
         <button onclick="updateCalculation(' % ')">%</button> 
         <button onclick="updateCalculation(' / ')">/</button>
@@ -39,26 +43,38 @@
 
 
     <script>
-        let calculation = localStorage.getItem('calculationHistory') ||'';        
+        let calculation = localStorage.getItem('calculationHistory') ||'';  
+        displayCalculation();      
 
 
         function updateCalculation(number){
             calculation += number;
             
+            displayCalculation();
+
             localStorage.setItem('calculationHistory', calculation);
-            console.log(calculation);
+            
+            // console.log(calculation);
         }
         
 
         function clearButton(){
             calculation = '';
-            console.log(calculation);
+            displayCalculation();
+            // console.log(calculation);
         }
 
         function equalButton(){
             calculation = eval(calculation);
 
-            console.log(calculation);
+            displayCalculation();
+            // console.log(calculation);
+        }
+
+        function displayCalculation() {
+          let calculationDisplay = document.querySelector('.calculationDisplay');
+
+          calculationDisplay.innerHTML = calculation;
         }
     </script>
 </body>
