@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Objects</title>
+</head>
+<body>
+
+
+
+<!-- JavaScript Code -->
+<script>
+  const object1 = {
+    message: 'hello'
+  }
+  
+  const object4 = {
+    message: 'Hello'
+  }
+
+  // console.log(object4.message);
+
+  // const message = object4.message;
+  const { message } = object4 // Destructuring
+  console.log(message);
+
+  const object5 = {
+    message: message,
+    method(){
+      console.log('method')
+    }
+  }
+
+  object5.method();
+  
+  
+  
+  
+  
+  
+  
+  
+  /*
+  const product2 = {
+    name: 'Shirt',
+    'delivery-time': '1 day',
+    rating: {
+      stars: 4.5,
+      count: 87
+    },
+    fun: function functionOne(){
+      console.log('Function inside object');
+    }
+  };
+
+  console.log(product2['delivery-time']);
+  product2.fun();
+
+  console.log(typeof console.log);
+
+  console.log(JSON.stringify(product2));
+
+  const jsonString = JSON.stringify(product2)
+
+  JSON.parse(jsonString);
+
+  console.log(JSON.parse(jsonString)) */
+
+
+  
+  /*const product = {
+    name: 'AirMax 90',
+    price: 1090
+  };
+
+  
+  console.log(product.name + ' ' + product.price);
+  
+  product.salutation = 'Mr.';
+
+  console.log(product);
+
+delete product.salutation;
+  console.log(product); */
+</script>
+</body>
+</html>

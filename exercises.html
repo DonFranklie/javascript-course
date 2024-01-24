@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises</title>
+</head>
+<body>
+  <input type="text" onkeydown="enterKey(event)"> 
+  <button  onclick="showResponse()" class="submit-btn">Submit</button>
+
+  <p class="response"></p>
+    
+<script>
+
+  const inputText = document.querySelector('input');
+  const submitBtn = document.querySelector('.submit-btn');
+  const responseSpace = document.querySelector('.response');
+
+  function showResponse(){
+    let userInput = inputText.value;
+    responseSpace.innerHTML = `Your name is ${userInput}`;
+  }
+
+  function enterKey(event){
+    if (event.code === 'Enter'){
+      showResponse();
+    }
+  }
+
+  
+
+
+
+</script>
+</body>
+</html>
