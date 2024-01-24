@@ -30,7 +30,7 @@
 <!-- JavaScript Code -->
 <script>
 
-window.document
+
 
   function handleCostKeydown(event){
     if (event.key === 'Enter'){
@@ -43,15 +43,24 @@ window.document
     const inputElement = document.querySelector('.js-cost-input');
 
     let cost = Number(inputElement.value);
+    let costInCents = cost * 100;
+    
+    // Check for non-number inputs
+    if (isNaN(cost)){
+      alert('Please enter a number!');
+      inputElement.value='';
+      return;
+      }
 
-    if (cost < 40) {
-      cost += 10;
+
+    if (costInCents < 4000) {
+      costInCents += 1000;
   
     } else{
-      cost = cost;
+      costInCents = costInCents;
     }
 
-    document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+    document.querySelector('.js-total-cost').innerHTML = `$${costInCents / 100}`;
   }
 
 
