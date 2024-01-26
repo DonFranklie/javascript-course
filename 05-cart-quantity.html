@@ -21,13 +21,17 @@
 
 <button onclick="resetCart()">Reset Cart</button>
 
+<p class="displayQuantity">
+
+</p>
+
 
 
 <!-- JavaScript Code -->
 <script>
     let cartQuantity = 0;
    function showQuantity(){
-    console.log(`Cart Quantity is ${cartQuantity}`);
+    displayQuantity();
    } 
 
    function updateCartQuantity(quantity){
@@ -42,13 +46,17 @@
    }
 
     cartQuantity += quantity;
-    console.log(`Cart Quantity is ${cartQuantity}`);
+    displayQuantity();
    }
 
    function resetCart(){
     cartQuantity = 0;
     console.log('The Cart was reset');
-    console.log(`Cart Quantity is ${cartQuantity}`);
+    displayQuantity();
+   }
+
+   function displayQuantity() {
+    document.querySelector('.displayQuantity').innerHTML= `Cart Quantity: ${cartQuantity}`;
    }
 </script>
 </body>
