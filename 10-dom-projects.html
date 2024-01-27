@@ -24,7 +24,6 @@
       color: #fff;
       font-weight: bold;
       cursor: pointer;
-      margin-bottom: 30px;
     }
 
     .is-subscribed{
@@ -42,6 +41,10 @@
       font-size: 15px;
       cursor: pointer;
     }
+
+    .amazon-title{
+      margin-top: 30px;
+    }
     
 
   </style>
@@ -53,8 +56,9 @@
   <button 
   class="js-subscribe-btn subscribe-btn" id="btn"
   onclick="subscribe ()">Subscribe</button>
+  <p class="subscribe-message"></p>
 
-  <p>Amazon Shipping Calculator</p>
+  <p class="amazon-title">Amazon Shipping Calculator</p>
   
   <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="handleCostKeydown(event)">
 
@@ -101,14 +105,16 @@
 
   function subscribe () {
     const buttonElement = document.querySelector('.js-subscribe-btn');
+    const subscribeMessage = document.querySelector('.subscribe-message');
 
     if (buttonElement.innerText === 'Subscribe') {
       buttonElement.innerText = 'Subscribed'
       buttonElement.classList.add('is-subscribed');
+      subscribeMessage.innerHTML = 'Thank You for subscribing';
     } else {
       buttonElement.innerText = 'Subscribe';
       buttonElement.classList.remove('is-subscribed');
-      
+      subscribeMessage.innerHTML = 'So sad to see you go!';
     }
   }
 
