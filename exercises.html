@@ -12,25 +12,45 @@
     </style>
 </head>
 <body>
-  <input type="text" placeholder="Type something" onkeyup="displayInput()"> 
+  <h4>Amazon Button</h4>
+  <button class="add-to-cart">Add to Cart</button>
 
-  <p class="response"></p>
+  <h4>Uber Buttons</h4>
+
+  <button class="request-now uber-button">Request Now</button>
+  <button class="schedule-button uber-button">Schedule for later</button>
+
+  <style>
+    .add-to-cart{
+      border-radius: 20px;
+      border: none;
+      background-color: rgb(255, 216, 20);
+      padding: 10px 45px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .uber-button{
+      border-radius: 5px;
+      border: none;
+      padding: 10px 25px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .request-now{
+      background-color: black;
+      color: #fff;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+  </style>
+
     
 <script>
 
-  const inputText = document.querySelector('input');
-  const responseSpace = document.querySelector('.response');
-
-  function displayInput() {
-    // Get the value of the text field on each keystroke
-    let userInput = inputText.value;
-    responseSpace.innerHTML = userInput;
-  }
-
-  
-
-
-
+ 
 </script>
 </body>
 </html>
