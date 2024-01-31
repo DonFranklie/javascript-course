@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercises</title>
-</head>
+    <link rel="stylesheet" href="styles/exercises.css">
+  </head>
 <body>
- <!-- Exercise 10c -->
- <button class="js-button">Test</button>
+ <!-- Exercise 10d -->
+ <button class="game-button btn" onclick="toggle(gameButton)">Gaming</button>
+ <button class="music-button btn" onclick="toggle(musicButton)">Music</button>
+ <button class="tech-button btn" onclick="toggle(techButton)">Tech</button>
+ 
 
     
-<script>
-  
-const jsButton = document.querySelector('button').classList.contains('js-button')
-console.log(jsButton);
-
-</script>
+<script src="scripts/exercises.js"></script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+
+      .btn{
+        border: none;
+        background-color: rgb(230, 230, 230);
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .clicked-button{
+        background-color: black;
+        color: white;
+      }
