@@ -45,6 +45,10 @@
     .amazon-title{
       margin-top: 30px;
     }
+
+    .error-message{
+      color: red;
+    }
     
 
   </style>
@@ -65,6 +69,7 @@
   <button onclick="calculateTotal()" class="calculate-btn">Calculate</button>
 
   <p class="js-total-cost"></p>
+  <p class="error-message"></p>
 
 <!-- JavaScript Code -->
 <script>
@@ -77,29 +82,32 @@
     }
   }
 
+  const errorMessage = document.querySelector('.error-message');
 
   function calculateTotal(){
     const inputElement = document.querySelector('.js-cost-input');
 
-    let cost = Number(inputElement.value);
-    let costInCents = cost * 100;
+    let cost = Number(inputElement.value)*100;
     
     // Check for non-number inputs
-    if (isNaN(cost)){
-      alert('Please enter a number!');
-      inputElement.value='';
+    if ( cost <= 0){
+      
+      errorMessage.innerHTML = 'Error: cost cannot be less than or equal to $0';
+      // inputElement.value='';
       return;
+      } else{
+        if (cost >= 1 && cost < 4000) {
+      cost += 1000;
+  
+    } else{
+      cost = cost;
+    }
+    errorMessage.innerHTML = '';
       }
 
 
-    if (costInCents < 4000) {
-      costInCents += 1000;
-  
-    } else{
-      costInCents = costInCents;
-    }
-
-    document.querySelector('.js-total-cost').innerHTML = `$${costInCents / 100}`;
+   
+    document.querySelector('.js-total-cost').innerHTML = `$${cost / 100}`;
   }
 
 
