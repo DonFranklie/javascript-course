@@ -5,77 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="styles/calculator.css">
 </head>
 <body>
-    <p class="calculationDisplay">
-
-    </p>
-
-    <p>
-        <button onclick="updateCalculation('1')">1</button> 
-        <button onclick="updateCalculation('2')">2</button> 
-        <button onclick="updateCalculation('3')">3</button> 
-        <button onclick="updateCalculation(' + ')">+</button>
-    </p> 
+  <div class="display-container">
+    <p class="calculationDisplay calculator-display"></p>
+  </div>
 
     <p>
-        <button onclick="updateCalculation('4')">4</button> 
-        <button onclick="updateCalculation('5')">5</button> 
-        <button onclick="updateCalculation('6')">6</button> 
-        <button onclick="updateCalculation(' - ')">-</button>
-    </p> 
+      <button class="calculator-button" onclick="updateCalculation('1')">1</button> 
+      <button class="calculator-button" onclick="updateCalculation('2')">2</button> 
+      <button class="calculator-button" onclick="updateCalculation('3')">3</button> 
+      <button class="calculator-button yellow" onclick="updateCalculation(' + ')">+</button>
+  </p> 
+  
+  <p>
+      <button class="calculator-button" onclick="updateCalculation('4')">4</button> 
+      <button class="calculator-button" onclick="updateCalculation('5')">5</button> 
+      <button class="calculator-button" onclick="updateCalculation('6')">6</button> 
+      <button class="calculator-button yellow" onclick="updateCalculation(' - ')">-</button>
+  </p> 
+  
+  <p>
+      <button class="calculator-button" onclick="updateCalculation('7')">7</button> 
+      <button class="calculator-button" onclick="updateCalculation('8')">8</button> 
+      <button class="calculator-button" onclick="updateCalculation('9')">9</button> 
+      <button class="calculator-button yellow" onclick="updateCalculation(' * ')">*</button>
+  </p>
+  
+  <p>
+      <button class="calculator-button" onclick="updateCalculation('0')">0</button> 
+      <button class="calculator-button" onclick="updateCalculation('.')">.</button> 
+      <button class="calculator-button" onclick="updateCalculation(' % ')">%</button> 
+      <button class="calculator-button yellow" onclick="updateCalculation(' / ')">/</button>
+  </p>
+  
+    <button onclick="clearButton()" class="calculator-button clear-button">Clear</button>
+    <button onclick="equalButton()" class="calculator-button">=</button>
 
-    <p>
-        <button onclick="updateCalculation('7')">7</button> 
-        <button onclick="updateCalculation('8')">8</button> 
-        <button onclick="updateCalculation('9')">9</button> 
-        <button onclick="updateCalculation(' * ')">*</button>
-    </p>
-    
-    <p>
-        <button onclick="updateCalculation('0')">0</button> 
-        <button onclick="updateCalculation('.')">.</button> 
-        <button onclick="updateCalculation(' % ')">%</button> 
-        <button onclick="updateCalculation(' / ')">/</button>
-    </p>
-    <button onclick="clearButton()">Clear</button>
-    <button onclick="equalButton()">=</button>
 
-
-    <script>
-        let calculation = localStorage.getItem('calculationHistory') ||'';  
-        displayCalculation();      
-
-
-        function updateCalculation(number){
-            calculation += number;
-            
-            displayCalculation();
-
-            localStorage.setItem('calculationHistory', calculation);
-            
-            // console.log(calculation);
-        }
-        
-
-        function clearButton(){
-            calculation = '';
-            displayCalculation();
-            // console.log(calculation);
-        }
-
-        function equalButton(){
-            calculation = eval(calculation);
-
-            displayCalculation();
-            // console.log(calculation);
-        }
-
-        function displayCalculation() {
-          let calculationDisplay = document.querySelector('.calculationDisplay');
-
-          calculationDisplay.innerHTML = calculation;
-        }
-    </script>
+    <script src="/scripts/calculator.js"></script>
 </body>
 </html>
