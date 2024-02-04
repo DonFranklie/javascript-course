@@ -12,22 +12,15 @@
 
 <!-- JavaScript Code -->
 <script>
-['apple', 10, 20, 30]
+const randomArray = ['apple', 10, 20, 30]
 
-// You can host objects in an array
-const newArray = [{name: 'Franklin', age: 22},]
+console.log(randomArray[randomArray.length - 1]);
 
-console.log(`My name is ${newArray[0].name} and am ${newArray[0].age} years old.`);
-
-
-const senileArray = new Array(12, 13,12,23);
-
-console.log(senileArray[1])
-
-// Arrays can be defined in two ways: using the  constructor or as a literal, but it is advisable to just use the array literal other than the constructor function
+console.log(randomArray.length);
 
 
-
+randomArray.splice(0, 2)
+console.log(randomArray)
 
 </script>
 </body>
