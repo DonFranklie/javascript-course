@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        /* Add your styles for the to-do list here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>To-Do List</h1>
+
+    <div>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <ul id="taskList">
+        <!-- Task items will be added here dynamically -->
+    </ul>
+
+    <script>
+        // JavaScript logic for the to-do list
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskList = document.getElementById("taskList");
+
+            if (taskInput.value.trim() !== "") {
+                // Create a new task item
+                const taskItem = document.createElement("li");
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+
+                taskItem.appendChild(checkbox);
+                taskItem.appendChild(document.createTextNode(taskInput.value));
+
+                // Attach an event listener to remove the task when clicked
+                taskItem.addEventListener("click", function () {
+                    taskList.removeChild(taskItem);
+                });
+
+                taskList.appendChild(taskItem);
+
+                // Clear the input field
+                taskInput.value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
