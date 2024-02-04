@@ -14,13 +14,21 @@
 <script>
 ['apple', 10, 20, 30]
 
-const newArray = ['apple','mango','passion', 'pineapple']
+// You can host objects in an array
+const newArray = [{name: 'Franklin', age: 22},]
 
-console.log(`To day I went to 'Scoops amd Spoons' and took a juice mixture of ${newArray[1]} and ${newArray[2]}.`);
+console.log(`My name is ${newArray[0].name} and am ${newArray[0].age} years old.`);
 
-newArray.shift('pawpaw');
 
-console.log(newArray)
+const senileArray = new Array(12, 13,12,23);
+
+console.log(senileArray[1])
+
+// Arrays can be defined in two ways: using the  constructor or as a literal, but it is advisable to just use the array literal other than the constructor function
+
+
+
+
 </script>
 </body>
 </html>
