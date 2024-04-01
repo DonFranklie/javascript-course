@@ -6,16 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Todo List </title>
+<link rel="stylesheet" href="/styles/todo-list.css">
 </head>
 <body>
  <p>Todo List</p>
 
- <input type="text" placeholder="Todo name" class="js-name-input">
- <button onclick="addTodo()">Add</button>
- 
- <div class="js-todo-list">
-  text
+ <div class="input-group">
+  <input type="text" placeholder="Todo name" class="js-name-input name-input">
+ <input type="date" name="todo Date" id="js-todo-date" class="due-date-input">
+ <button onclick="addTodo()" class="add-todo-button">Add</button>
  </div>
+ 
+ <div class="js-todo-list todo-grid"></div>
 
 <!-- JavaScript Code -->
 <script src="/scripts/11-todo-list.js"></script>
