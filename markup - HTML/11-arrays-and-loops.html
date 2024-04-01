@@ -12,11 +12,14 @@
 
 <!-- JavaScript Code -->
 <script>
-const nums = [10, 20, 30]
 
-nums[nums.length-1] = 99;
+function getLastValue(array){
+  lastIndex = array[array.length-1]; 
+  return lastIndex;
+}
 
-console.log(nums)
+console.log(getLastValue(['hi', 'hello', 'good']))
+
 
 
 
