@@ -13,19 +13,55 @@
 <!-- JavaScript Code -->
 <script>
 
-function countPositive(nums) {
-  let positives = 0
-  for (i=0;i< nums.length; i++){
-    if (nums[i] > 0){
-      positives +=1
-      // console.log(positives)
-    }
+let array1 = [1,2,3]
+let array2 =array1.slice();
+array2.push(4);
+// console.log(array1)
+// console.log(array2)
+
+const [firstValue, secondValue, thirdValue]=[1,2,3];
+
+// console.log(firstValue)
+
+for (let i = 1; i <= 10; i++) {
+  
+  if (i%3 === 0) {
+    continue;
   }
-return positives;
+
+  // console.log(i)
+
+  if (i === 8){
+    break
+  }
 }
 
-console.log(countPositive([-2,3,-5,7,10]))
+let i = 1
 
+while (i <= 10){
+  if (i%3 === 0) {
+    i++;
+    continue;
+  }
+  console.log(i)
+  i++;
+}
+
+function doubleArray(nums) {
+const numsDoubled = [];
+
+for (let i = 0; i< nums.length; i++) {
+  const num = nums[i];
+  if (num === 0) {
+      return numsDoubled;
+  }
+  numsDoubled.push(num*2);
+}
+
+return numsDoubled;
+}
+
+console.log(doubleArray([1, 1, 8,9,0,7]))
 
 
 </script>
