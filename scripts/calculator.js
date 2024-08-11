@@ -7,7 +7,6 @@ let calculation = localStorage.getItem('calculationHistory') ||'';
             
             displayCalculation();
 
-            localStorage.setItem('calculationHistory', calculation);
             
             // console.log(calculation);
         }
@@ -30,4 +29,7 @@ let calculation = localStorage.getItem('calculationHistory') ||'';
           let calculationDisplay = document.querySelector('.calculationDisplay');
 
           calculationDisplay.innerHTML = calculation;
+
+
+          localStorage.setItem('calculationHistory', calculation);
         }
