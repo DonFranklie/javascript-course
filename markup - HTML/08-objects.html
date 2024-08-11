@@ -8,82 +8,120 @@
 </head>
 <body>
 
-
+<h1>Objects</h1>
 
 <!-- JavaScript Code -->
 <script>
-  const object1 = {
-    message: 'hello'
+
+const product1 = {
+  name: 'basketball',
+  price: 2095,
+}
+
+let str = 'Franklin';
+
+console.log(str.repeat(2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const object1 = {
+  message: 'hello',
+}
+
+const object2 = object1;
+
+object1.message = 'Greetings';
+
+const object3 = {
+  message: 'Greetings',
+}
+
+const object4 = {
+  message: 'Greetings',
+  price: 799,
+}
+
+// const message = object4.message
+
+const { message, price } = object4 // Destructuring
+
+const object5 = {
+  message,
+  method() {
+    console.log('method');
   }
-  
-  const object4 = {
-    message: 'Hello'
+}
+
+// console.log(object5.message);
+// object5.method();
+
+
+/*
+const product2 = {
+  name: 'shirt',
+  'delivery-time': '1 day',
+  rating: {
+    stars: 4.5,
+    count: 87,
+  },
+  fun: function function1() {
+    console.log('Hello');
   }
+}
 
-  // console.log(object4.message);
+console.log(product2['name']);
 
-  // const message = object4.message;
-  const { message } = object4 // Destructuring
-  console.log(message);
+console.log(product2['delivery-time']);
 
-  const object5 = {
-    message: message,
-    method(){
-      console.log('method')
-    }
-  }
+console.log(product2.rating['stars']);
 
-  object5.method();
-  
-  
-  
-  
-  
-  
-  
-  
-  /*
-  const product2 = {
-    name: 'Shirt',
-    'delivery-time': '1 day',
-    rating: {
-      stars: 4.5,
-      count: 87
-    },
-    fun: function functionOne(){
-      console.log('Function inside object');
-    }
+console.log(typeof console.log);
+
+const stringedObj = JSON.stringify(product2);
+const objObj = JSON.parse(stringedObj);
+
+console.log(objObj);
+
+*/
+/*
+  const product = {
+    name: 'socks',
+    price: 1090.
   };
 
-  console.log(product2['delivery-time']);
-  product2.fun();
+  console.log(product.price);
 
-  console.log(typeof console.log);
-
-  console.log(JSON.stringify(product2));
-
-  const jsonString = JSON.stringify(product2)
-
-  JSON.parse(jsonString);
-
-  console.log(JSON.parse(jsonString)) */
-
-
-  
-  /*const product = {
-    name: 'AirMax 90',
-    price: 1090
-  };
-
-  
-  console.log(product.name + ' ' + product.price);
-  
-  product.salutation = 'Mr.';
+  product.name = 'Cotton Socks';
 
   console.log(product);
 
-delete product.salutation;
-  console.log(product); */
+  product.newProperty = true;
+
+  console.log(product);
+
+  delete product.newProperty;
+
+  console.log( typeof product);
+  */
+  
+  
 </script>
 </body>
 </html>
