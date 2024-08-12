@@ -18,10 +18,37 @@
   <p>Orders under $40 = +$10 shipping.</p>
   <p>Orders over $40 =  FREE shipping.</p>
 
-  <input type="text" name="" id=""> <button>Calculate</button>
+  <input type="text" name="" id="" autocomplete="off" onkeydown="handleCostKeydown(event)" placeholder="Cost of Order"> <button class="calculate-btn" onclick="calculateTotal()">Calculate</button>
+  <p class="total-amount"></p>
 
+  <script> 
 
-  <script>
+    function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+            calculateTotal();
+        }
+    }
+
+    function calculateTotal() {
+    const amountInput = document.querySelector('input');
+    const totalAmount = document.querySelector('.total-amount');
+    let cost = +amountInput.value;
+
+      if (cost < 40 && cost > 0 ) {
+        cost *= 100;
+        cost += 1000;
+        cost /= 100;
+        totalAmount.innerHTML = `$${cost}`;
+      
+      } else if (cost >= 40) {
+        totalAmount.innerHTML = `$${cost}`;
+       
+      } else {
+        totalAmount.innerHTML = 'Enter the correct amount';
+       
+      }
+    }
+    
 
     function subscribe() {
       const buttonElement = document.querySelector('.js-subscribe-button');
