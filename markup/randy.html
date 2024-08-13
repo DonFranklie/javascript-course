@@ -8,43 +8,101 @@
       * {
         font-family: 'Outfit';
       }
-      .cart-button {
-        font-weight: 700;
-        font-size: 16px;
-        background-color: rgb(255, 216,20);
-        border: none;
-        padding: 10px 32px;
-        border-radius: 25px;
-        cursor: pointer;
-      }
 
-      .uber-button {
-        font-weight: 700;
-        font-size: 16px;
-        background-color: rgb(230, 230,230);
+      .button {
+        background-color: rgb(230, 230, 230);
+        color: black;
         border: none;
-        padding: 10px 32px;
         border-radius: 5px;
+        padding: 8px 12px;
+        font-weight: 600;
         cursor: pointer;
       }
 
-      .request-button {
+      .button-on {
         background-color: black;
         color: white;
-        margin-right: 10px;
       }
+      
     </style>
 </head>
 <body>
-  <button class="cart-button">Add to Cart</button>
-<p></p>
-  <button class="uber-button request-button">Request Now</button>
-  <button class="uber-button">Schedule for later</button>
-  <script> 
+  <button class="js-button-1 button" onclick="toggleButton('.js-button-1')">Gaming</button>
+  <button class="js-button-2 button" onclick="toggleButton('.js-button-2')">Music</button>
+  <button class="js-button-3 button" onclick="toggleButton('.js-button-3')">Tech</button>
 
     
-       
-    </script>
+  <script>
+
+    function toggleButton(selector) {
+      let currentBtn = document.querySelector(selector);
+
+      if (!currentBtn.classList.contains('button-on')) {
+        turnOffPreviousBtn();
+        currentBtn.classList.add('button-on')
+      } else {
+        currentBtn.classList.remove('button-on')
+      }
+    }
+
+    function turnOffPreviousBtn() {
+      let butn = document.querySelector('.button-on');
+
+      if (butn) {
+        butn.classList.remove('button-on');
+      }
+
+    }
+
+    /*
+     let jsButton1 = document.querySelector('.js-button-1');
+     let jsButton2 = document.querySelector('.js-button-2');
+     let jsButton3 = document.querySelector('.js-button-3');
+   
+   jsButton1.addEventListener('click', function() {
+
+    if (!(jsButton1.classList.contains('button-on'))) {
+      jsButton1.classList.add('button-on');
+            if (jsButton2.classList.contains('button-on') || jsButton3.classList.contains('button-on')){
+              jsButton2.classList.remove('button-on');
+              jsButton3.classList.remove('button-on');
+            } 
+          
+      } else {
+          jsButton1.classList.remove('button-on')
+      }
+   });
+
+    jsButton2.addEventListener('click', function() {
+
+      if (!(jsButton2.classList.contains('button-on'))) {
+        jsButton2.classList.add('button-on');
+              if (jsButton1.classList.contains('button-on') || jsButton3.classList.contains('button-on')){
+                jsButton1.classList.remove('button-on');
+                jsButton3.classList.remove('button-on');
+              }
+            
+        } else {
+            jsButton2.classList.remove('button-on')
+        }
+    });
+
+      jsButton3.addEventListener('click', function() {
+
+          if (!(jsButton3.classList.contains('button-on'))) {
+            jsButton3.classList.add('button-on');
+                  if (jsButton1.classList.contains('button-on') || jsButton2.classList.contains('button-on')){
+                    jsButton1.classList.remove('button-on');
+                    jsButton2.classList.remove('button-on');
+                  }
+                
+            } else {
+                jsButton3.classList.remove('button-on')
+            }
+      }); */
+
+
+  </script>
 
 </body>
 </html>
