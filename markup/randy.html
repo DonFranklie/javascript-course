@@ -3,19 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise (9)</title>
+    <title>Exercise (10)</title>
+    <style>
+      * {
+        font-family: 'Outfit';
+      }
+      .cart-button {
+        font-weight: 700;
+        font-size: 16px;
+        background-color: rgb(255, 216,20);
+        border: none;
+        padding: 10px 32px;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+
+      .uber-button {
+        font-weight: 700;
+        font-size: 16px;
+        background-color: rgb(230, 230,230);
+        border: none;
+        padding: 10px 32px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .request-button {
+        background-color: black;
+        color: white;
+        margin-right: 10px;
+      }
+    </style>
 </head>
 <body>
-  <input type="text" class="js-input" onkeyup="handleKeyup(event)">
-  <p class="js-display"></p>
-
+  <button class="cart-button">Add to Cart</button>
+<p></p>
+  <button class="uber-button request-button">Request Now</button>
+  <button class="uber-button">Schedule for later</button>
   <script> 
 
-    function handleKeyup(event) {
-      let inputElement = document.querySelector('.js-input');
-
-       document.querySelector('.js-display').innerHTML = inputElement.value;
-    }
     
        
     </script>
