@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+    * {
+      font-family: 'Outfit';
+    }
+  .subscribe-button {
+    font-size: 16px;
+    padding: 10px 22px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    background: #000;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 30px;
+  }
+
+  .subscribed-btn {
+    background: rgb(240, 240, 240);
+    color: black;
+  }
+
+  .cost-input {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .calc-btn {
+    padding: 12px 15px;
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  </style>
+</head>
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button class="js-subscribe-button subscribe-button" onclick="subscribe()">Subscribe</button>
+
+
+ 
+
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40 = +$10 shipping.</p>
+  <p>Orders over $40 =  FREE shipping.</p>
+
+  <input type="text" name="" id="" autocomplete="off" onkeydown="handleCostKeydown(event)" placeholder="Cost of Order" class="cost-input"> <button class="calculate-btn calc-btn" onclick="calculateTotal()">Calculate</button>
+  <p class="total-amount"></p>
+
+
+  <p>Rock Paper Scissors</p>
+  <a href="/markup/09-rock-paper-scissors.html">Click here</a>
+
+  <script> 
+
+    function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+            calculateTotal();
+        }
+    }
+
+    function calculateTotal() {
+    const amountInput = document.querySelector('input');
+    const totalAmount = document.querySelector('.total-amount');
+    let cost = +amountInput.value;
+
+      if (cost < 40 && cost > 0 ) {
+        cost *= 100;
+        cost += 1000;
+        cost /= 100;
+        totalAmount.innerHTML = `$${cost}`;
+      
+      } else if (cost >= 40) {
+        totalAmount.innerHTML = `$${cost}`;
+       
+      } else {
+        totalAmount.innerHTML = 'Enter the correct amount';
+       
+      }
+    }
+    
+
+    function subscribe() {
+      const buttonElement = document.querySelector('.js-subscribe-button');
+        if (buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerText = 'Subscribed';
+          buttonElement.classList.add('subscribed-btn');
+        } else {
+          buttonElement.innerText = 'Subscribe';
+          buttonElement.classList.remove('subscribed-btn');
+        }
+    }
+
+  </script>
+</body>
+</html>
