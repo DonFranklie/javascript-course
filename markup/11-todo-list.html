@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
-  <style>
-    *{
-      font-family: 'Outfit';
-    }
-  </style>
+  <link rel="stylesheet" href="/styles/todo-list.css">
 </head>
 <body>
   <h1>Todo List 1</h1>
 
-  <input class="input-element" type="text" placeholder="Todo name" autocomplete="off"> <button onclick="addTask()">Add</button>
+  <div class="inputs">
+    <input class="input-element input-name" type="text" required placeholder="Todo name" autocomplete="off">
+  <input type="date" name="" id="" class="date-input  input-date" required> 
+  <button onclick="addTask()" class="add-button">Add</button>
+  </div>
 
-  <div class="js-todo-list">
+  <div class="js-todo-list todo-grid">
 
   </div>
 
