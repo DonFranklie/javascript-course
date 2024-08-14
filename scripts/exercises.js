@@ -213,7 +213,7 @@ function countWords(words) {
 
 console.log(countWords(['apple', 'grape', 'apple', 'apple', 'grape']));
 
-*/
+
 
 const array = ['search', 'morning', 'tom', 'franklin'];
 let search = 'search';
@@ -229,3 +229,191 @@ for (let i = 0; i < array.length; i++) {
 }
 
 console.log(index);
+
+
+
+const array = ['search', 'morning', 'tom', 'search', 'franklin', 'search'];
+let search = 'search';
+
+let index = -1;
+
+for (let i = 0; i < array.length; i++) {
+  const word = array[i];
+
+  if (word === search) {
+    index = i;
+      console.log(i) 
+
+      break;
+    };
+  } 
+
+
+
+function findIndex(array, word) {
+  let index = -1
+
+  for (let j = 0; j < array.length; j++) {
+    let element = array[j];
+
+    if (element === word) {
+      index = j;
+
+      break;
+    }
+
+    
+  }
+
+  return index;
+}
+
+console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+console.log(findIndex(['green', 'yellow', 'blue', 'yellow'], 'red'));
+
+
+function removeEgg(foods) {
+  let newArray = [];
+  let eggNum = 0;
+
+  for (let i = 0; i < foods.length; i++) {
+    const element = foods[i];
+
+    if (!(element === 'egg')) {
+      newArray.push(element);
+    } else {
+      eggNum++;
+      if (eggNum == 2) {
+        newArray.push(element)
+      }
+    }
+    
+  }
+
+  return newArray;
+}
+const array = ['egg', 'apple', 'egg', 'egg', 'ham'] 
+console.log(removeEgg(array));
+
+
+
+function removeEgg(foods) {
+  let newArray = [];
+  let eggNum = 0;
+  foods = foods.reverse();
+  // ['ham', 'egg', 'egg', 'apple', 'egg']
+
+
+  for (let i = 0; i < foods.length; i++) {
+    const element = foods[i];
+
+    if (!(element === 'egg')) {
+      newArray.push(element);
+    } else {
+      eggNum++;
+      if (eggNum > 2) {
+        newArray.push(element)
+      }
+    }
+    
+  }
+
+  return newArray.reverse();
+}
+const array = ['egg', 'apple', 'egg', 'egg', 'ham'] 
+console.log(removeEgg(array));
+
+
+
+function removeEgg(foods) {
+  let newArray = [];
+  let eggNum = 0;
+  let newfoods = foods.slice().reverse();
+  // ['ham', 'egg', 'egg', 'apple', 'egg']
+
+
+  for (let i = 0; i < newfoods.length; i++) {
+    const element = newfoods[i];
+
+    if (!(element === 'egg')) {
+      newArray.push(element);
+    } else {
+      eggNum++;
+      if (eggNum > 2) {
+        newArray.push(element)
+      }
+    }
+    
+  }
+
+  return newArray.reverse();
+}
+let array = ['egg', 'apple', 'egg', 'egg', 'ham']; 
+// console.log(removeEgg(array));
+console.log(array);
+
+console.log(removeEgg(array));
+console.log(array);
+
+
+for (i = 1; i <= 20; i++) {
+
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log('FizzBuzz');
+  } else if (i % 3 === 0) {
+    console.log('Fizz');
+  } else if (i % 5 === 0) {
+    console.log('Buzz');
+  } else {
+    console.log(i);
+  }
+}
+  
+
+function findIndex(array, word) {
+  let index = -1
+
+  for (let j = 0; j < array.length; j++) {
+    let element = array[j];
+
+    if (element === word) {
+      index = j;
+
+      break;
+    }
+
+    
+  }
+
+  return index;
+}
+
+console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+console.log(findIndex(['green', 'yellow', 'blue', 'yellow'], 'red'));
+
+const array = ['green', 'red', 'blue', 'red'];
+
+function unique(array) {
+  const newArray = [];
+  let newWord = 0;
+  
+  
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    
+    if (findIndex(newArray, element) == -1) {
+      newArray.push(element);
+    }
+    
+    
+  }
+
+
+  return newArray;
+}
+
+console.log(unique(array));
+
+*/
+
+
