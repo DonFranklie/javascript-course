@@ -8,6 +8,7 @@
 <body>
 
   <h1>Advanced Functions</h1>
+  
 
 
   <script>
@@ -46,18 +47,47 @@
 
     console.log('next line 2');
 
-    */
+    
 
     [
       'make dinner',
       'wash dishes',
       'watch youtube'
-    ].forEach(function(value, i) {
+    ].forEach((value, i) => {
       if (value === 'wash dishes') {
         return;
       }
         console.log(value);
     });
+
+  
+
+     const arrowFunction = (frank) => {
+      console.log(`Hello ${frank}`);
+     };
+
+     arrowFunction('SWE Franklin');
+
+
+     const oneParam = param => {
+        console.log(param)
+     }
+
+     const oneLine = () =>  2+3;
+
+     console.log(oneLine());
+
+     const object2 = {
+      method: () => {
+
+      },
+      method () { // Easier to read
+
+      }
+     }
+
+  */
+
 
 
   </script>
