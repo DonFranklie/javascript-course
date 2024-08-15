@@ -6,7 +6,13 @@ const todoList = [
   const todoListDisplay = document.querySelector('.js-todo-list');
   const dateElement = document.querySelector('.date-input');
 
+
   renderTodoList();
+
+  document.querySelector('.js-add-button')
+    .addEventListener('click', addTask);
+
+
   function addTask() {
     const name = inputElement.value
     const dueDate = dateElement.value;
@@ -31,14 +37,22 @@ const todoList = [
       const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
-      <button onclick="
-        todoList.splice(${index}, 1);
-        renderTodoList();
-      " class = "delete-button">Delete</button>
+      <button class = "delete-button js-delete-button">Delete</button>
       `
       todoListHTML += html;
       
     });
 
     todoListDisplay.innerHTML = todoListHTML;
+
+    document.querySelectorAll('.js-delete-button')
+      .forEach((deleteButton, index) => {
+        deleteButton.addEventListener('click', () => {
+             todoList.splice(index, 1);
+              renderTodoList();
+        })
+        
+    });
+    
   }
+

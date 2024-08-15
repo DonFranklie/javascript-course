@@ -13,6 +13,20 @@ let score = JSON.parse(localStorage.getItem('score'))
   let isAutoPlaying = false;
   let intervalId;
 
+  document.querySelector('.js-reset-score-button')
+    .addEventListener('click', () => {
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      updateScoreElement();
+      jsResult.innerHTML = '';
+      jsMoves.innerHTML = '';
+    });
+
+    document.querySelector('.js-auto-play-button')
+      .addEventListener('click', autoPlay);
+  
   function autoPlay() {
     if (!isAutoPlaying) {
       intervalId = setInterval(() =>  {
@@ -26,6 +40,29 @@ let score = JSON.parse(localStorage.getItem('score'))
     }
        
   }
+
+  document.querySelector('.js-rock-button').addEventListener('click', () => {
+    playGame('rock');
+  });
+
+  document.querySelector('.js-scissors-button').addEventListener('click', () => {
+    playGame('scissors');
+  });
+
+  document.querySelector('.js-paper-button').addEventListener('click', () => {
+    playGame('paper');
+  });
+
+  document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r'){
+      playGame('rock');
+    } else if(event.key === 'p'){
+      playGame('paper');
+    } else if(event.key === 's'){
+      playGame('scissors');
+    }
+  });
+
 
   function playGame(playerMove){
       const computerMove = pickComputerMove();
