@@ -48,3 +48,11 @@ body {
   cursor: pointer;
 }
 
+.js-reset-confirm {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+

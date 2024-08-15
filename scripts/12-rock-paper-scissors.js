@@ -10,22 +10,48 @@ let score = JSON.parse(localStorage.getItem('score'))
 
   updateScoreElement();
 
+  function confirmResetScore() {
+    const resetQuestionContainer = document.querySelector('.js-reset-confirm');
+
+    resetQuestionContainer.classList.add('display-block');
+    const yesButton = document.querySelector('.js-yes-button');
+    const noButton = document.querySelector('.js-no-button');
+
+    yesButton.addEventListener('click', () => {
+      resetScore();
+      resetQuestionContainer.classList.remove('display-block');
+    });
+
+    noButton.addEventListener('click', () => {
+      resetQuestionContainer.classList.remove('display-block');
+    });
+
+    
+
+  }
+
+  function resetScore() {
+    
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+    jsResult.innerHTML = '';
+    jsMoves.innerHTML = '';
+
+} 
+
+
   let isAutoPlaying = false;
   let intervalId;
 
   document.querySelector('.js-reset-score-button')
-    .addEventListener('click', () => {
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-      jsResult.innerHTML = '';
-      jsMoves.innerHTML = '';
-    });
+    .addEventListener('click', confirmResetScore);
 
-    document.querySelector('.js-auto-play-button')
-      .addEventListener('click', autoPlay);
+  const autoPlayButton = document.querySelector('.js-auto-play-button');
+
+      autoPlayButton.addEventListener('click', autoPlay);
   
   function autoPlay() {
     if (!isAutoPlaying) {
@@ -33,10 +59,15 @@ let score = JSON.parse(localStorage.getItem('score'))
         const playerMove = pickComputerMove();
         playGame(playerMove)
       }, 1000);
+
       isAutoPlaying = true;
+
+      autoPlayButton.innerHTML = 'Stop Auto Playing';
     } else {
       clearInterval(intervalId)
       isAutoPlaying = false;
+
+      autoPlayButton.innerHTML = 'Auto Play';
     }
        
   }
@@ -60,6 +91,10 @@ let score = JSON.parse(localStorage.getItem('score'))
       playGame('paper');
     } else if(event.key === 's'){
       playGame('scissors');
+    } else if(event.key === 'a'){
+      autoPlay();
+    } else if(event.key === 'Backspace'){
+      resetScore();
     }
   });
 
@@ -138,5 +173,4 @@ let score = JSON.parse(localStorage.getItem('score'))
 
       return computerMove;
   }
-
  
