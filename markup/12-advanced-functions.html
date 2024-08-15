@@ -12,7 +12,28 @@
 
 
   <script>
+    
+    const array1 = [1, -3, 5, 0];
 
+    console.log(array1.filter(value => value >= 0));
+
+    let newArray = [];
+    console.log(array1.forEach((value) => {
+      
+      if(value > 0) {
+        newArray.push(value);
+      }
+      return newArray;
+    }));
+
+    console.log(newArray);
+    
+    
+    
+    
+    
+    
+    /*
     const buttonElement = document.querySelector('.js-button');
 
     const eventListener = () => {
@@ -29,7 +50,7 @@
     });
     
     
-    /*
+    
     function greeting() {
       console.log('hello');
     }
